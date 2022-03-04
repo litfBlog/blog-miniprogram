@@ -1,3 +1,12 @@
+<!--
+ * @Author: litfa
+ * @Date: 2022-03-02 18:39:33
+ * @LastEditTime: 2022-03-04 10:12:08
+ * @LastEditors: litfa
+ * @Description: 首页
+ * @FilePath: /blog-miniprogram/src/pages/index/index.vue
+ * 
+-->
 <template>
   <view class="content">
     <image class="logo" src="/static/logo.png" />

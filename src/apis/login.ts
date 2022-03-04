@@ -1,8 +1,7 @@
-// import { $http } from '@escook/request-miniprogram';
 /*
  * @Author: litfa
  * @Date: 2022-03-02 20:40:59
- * @LastEditTime: 2022-03-03 18:19:27
+ * @LastEditTime: 2022-03-04 14:54:51
  * @LastEditors: litfa
  * @Description: 登录
  * @FilePath: /blog-miniprogram/src/apis/login.ts
