@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-03-02 20:01:36
- * @LastEditTime: 2022-03-04 10:07:55
+ * @LastEditTime: 2022-03-04 17:54:21
  * @LastEditors: litfa
  * @Description: 登录按钮
  * @FilePath: /blog-miniprogram/src/components/LoginButton.vue
@@ -12,10 +12,12 @@ import loginApi from './../apis/login'
 import { ref } from 'vue'
 
 // 获取code
-let { scene } = uni.getLaunchOptionsSync()
+let { query, scene } = uni.getLaunchOptionsSync()
+if (query.scene) scene = query.scene
+
 // 展示是否为网页端登录
 let isScan = ref(false)
-if (scene.toString().length > 4) {
+if (scene.toString()?.length > 4) {
   isScan.value = true
 }
 
@@ -51,6 +53,7 @@ const login = async () => {
       let { encryptedData, signature, iv } = e
       userData = { ...userData, encryptedData, signature, iv, scene }
       userData.userInfo = { nickName, avatarUrl, language }
+      loginApi(userData)
     }
   })
 
@@ -60,6 +63,7 @@ const login = async () => {
 <template>
   {{ isScan }}
   <div v-if="isScan">登陆到网页端</div>
+  <div v-else>登录小程序</div>
   <button @click="login">一键登录</button>
 </template>
 
