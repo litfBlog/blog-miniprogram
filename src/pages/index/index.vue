@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-03-02 18:39:33
- * @LastEditTime: 2022-04-17 16:04:41
+ * @LastEditTime: 2022-04-17 16:42:53
  * @LastEditors: litfa
  * @Description: 首页
  * @FilePath: /blog-miniprogram/src/pages/index/index.vue
@@ -9,16 +9,30 @@
 -->
 <template>
   <view class="content">
-    <Card></Card>
-    <Card></Card>
-    <Card></Card>
-    <Card></Card>
+    <Card
+      v-for="i in list"
+      :key="i.id"
+      :username="i.username"
+      :avatar="i.avatar"
+      :title="i.title"
+      :desc="i.desc"
+      :cover="i.cover"
+    ></Card>
   </view>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-const title = ref('Hello')
+import getListApi from './../../apis/getList'
+
+const list: any = ref([])
+
+const getList = async () => {
+  const { data: res } = await getListApi()
+  list.value = res.list
+
+}
+getList()
 </script>
 
 <style lang="less">

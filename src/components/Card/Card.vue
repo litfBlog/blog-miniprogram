@@ -1,24 +1,26 @@
 <script lang="ts" setup>
-
+import propNames from './props'
+const props = defineProps(propNames)
+const baseUrl = import.meta.env.VITE_baseUrl || ''
 </script>
 
 <template>
   <view class="Card">
     <div class="user">
-      <image mode="widthFix" src="https://www.litf.com.cn/api/data/userAvatar/5cf1bd8c8795e49ba2490795e9360a6a.jpg">
+      <image mode="widthFix" :src="avatar">
       </image>
       <span class="username">
-        用户名
+        {{ username }}
       </span>
     </div>
 
     <div class="content">
       <div class="text">
-        <h3 class="title">标题标题标题</h3>
-        <p class="desc">简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介简介</p>
+        <h3 class="title">{{ title }}</h3>
+        <p class="desc">{{ desc }}</p>
       </div>
       <div class="cover">
-        <image src="https://gitee.com/QH_ayang/img/raw/master/img/20210404210053.png" mode="widthFix"></image>
+        <image :src="`${baseUrl}${cover}`" mode="widthFix"></image>
       </div>
     </div>
   </view>
@@ -36,7 +38,7 @@
   display: flex;
   align-items: center;
   width: 100%;
-  margin-bottom: 15rpx;
+  margin-bottom: 20rpx;
   image {
     width: 60rpx;
     border-radius: 50%;
@@ -49,19 +51,26 @@
 }
 .content {
   display: flex;
-  align-items: center;
   .text {
+    width: 900rpx;
+    height: 100%;
     .title {
       color: #000;
       font-weight: 550;
     }
     .desc {
       font-size: 30rpx;
+      word-break: break-all;
     }
   }
   .cover {
     width: 500rpx;
+    height: 200rpx;
+    overflow: hidden;
     margin-left: 5rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     image {
       width: 100%;
     }
