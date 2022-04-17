@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-03-02 18:39:33
- * @LastEditTime: 2022-03-04 10:12:08
+ * @LastEditTime: 2022-04-17 16:04:41
  * @LastEditors: litfa
  * @Description: 首页
  * @FilePath: /blog-miniprogram/src/pages/index/index.vue
@@ -9,10 +9,10 @@
 -->
 <template>
   <view class="content">
-    <image class="logo" src="/static/logo.png" />
-    <view class="text-area">
-      <text class="title">{{ title }}</text>
-    </view>
+    <Card></Card>
+    <Card></Card>
+    <Card></Card>
+    <Card></Card>
   </view>
 </template>
 
@@ -21,12 +21,19 @@ import { ref } from 'vue'
 const title = ref('Hello')
 </script>
 
-<style>
+<style lang="less">
+page {
+  background-color: @body-background-color;
+}
+</style>
+
+<style lang="less" scoped>
 .content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
+  width: 100%;
 }
 
 .logo {

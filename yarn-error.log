@@ -1,8 +1,8 @@
 Arguments: 
-  D:\App\nodejs\node.exe D:\App\nodejs\node_modules\yarn\bin\yarn.js add less
+  D:\App\nodejs\node.exe D:\App\nodejs\node_modules\yarn\bin\yarn.js add uview-ui
 
 PATH: 
-  C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\bin;D:\App\Java\jdk-17.0.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;D:\APP\微信web开发者工具\dll;C:\Users\32227;C:\Windows\System32\OpenSSH;C:\Program Files\dotnet\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\32227\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\32227\AppData\Local\Programs\Python\Python39\;C:\Users\32227\AppData\Local\Microsoft\WindowsApps;D:\App\nvm;D:\App\nodejs;D:\App\Microsoft VS Code\bin;D:\App\Git\bin;D:\App\Git\cmd;C:\Users\32227\.dotnet\tools
+  C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\bin;D:\App\Java\jdk-17.0.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;D:\APP\微信web开发者工具\dll;C:\Users\32227;C:\Windows\System32\OpenSSH;C:\Program Files\dotnet\;C:\Program Files\Google\Chrome\Application;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\32227\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\32227\AppData\Local\Programs\Python\Python39\;C:\Users\32227\AppData\Local\Microsoft\WindowsApps;D:\App\nvm;D:\App\nodejs;D:\App\Microsoft VS Code\bin;D:\App\Git\bin;D:\App\Git\cmd;C:\Users\32227\.dotnet\tools
 
 Yarn version: 
   1.22.17
@@ -21,6 +21,7 @@ npm manifest:
     "name": "uni-preset-vue",
     "version": "0.0.0",
     "scripts": {
+      "dev": "code . | wt -d ./ | yarn dev:mp-weixin",
       "dev:app": "uni -p app",
       "dev:custom": "uni -p",
       "dev:h5": "uni",
@@ -63,6 +64,7 @@ npm manifest:
       "@dcloudio/uni-mp-toutiao": "^3.0.0-alpha-3031220220222002",
       "@dcloudio/uni-mp-weixin": "^3.0.0-alpha-3031220220222002",
       "@dcloudio/uni-quickapp-webview": "^3.0.0-alpha-3031220220222002",
+      "@escook/request-miniprogram": "^0.2.1",
       "less-loader": "^5.0.0",
       "vue": "^3.2.31",
       "vue-i18n": "^9.1.9",
@@ -1395,6 +1397,11 @@ Lockfile:
       "hash-sum" "^2.0.0"
       "jsonc-parser" "^3.0.0"
       "picocolors" "^1.0.0"
+  
+  "@escook/request-miniprogram@^0.2.1":
+    "integrity" "sha512-ueWV5YsaEm/ycQZuEjMiA88GFMhfBQSjy9GrP9omy4xAQajkGTbYIlnhzsDfWzRPmRC1fKmAiKMrCVcgS+SHcQ=="
+    "resolved" "https://registry.npmmirror.com/@escook/request-miniprogram/-/request-miniprogram-0.2.1.tgz"
+    "version" "0.2.1"
   
   "@intlify/core-base@9.1.9":
     "integrity" "sha512-x5T0p/Ja0S8hs5xs+ImKyYckVkL4CzcEXykVYYV6rcbXxJTe2o58IquSqX9bdncVKbRZP7GlBU1EcRaQEEJ+vw=="
