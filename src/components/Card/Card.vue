@@ -1,7 +1,16 @@
+<!--
+ * @Author: litfa
+ * @Date: 2022-04-17 15:06:16
+ * @LastEditTime: 2022-04-17 17:17:24
+ * @LastEditors: litfa
+ * @Description: Card
+ * @FilePath: /blog-miniprogram/src/components/Card/Card.vue
+ * 
+-->
 <script lang="ts" setup>
 import propNames from './props'
 const props = defineProps(propNames)
-const baseUrl = import.meta.env.VITE_baseUrl || ''
+const baseUrl = import.meta.env.VITE_ApiUrl || ''
 </script>
 
 <template>
