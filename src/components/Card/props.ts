@@ -1,7 +1,7 @@
 /*
  * @Author: litfa
  * @Date: 2022-04-17 16:35:52
- * @LastEditTime: 2022-04-17 16:57:11
+ * @LastEditTime: 2022-04-17 18:05:03
  * @LastEditors: litfa
  * @Description: props
  * @FilePath: /blog-miniprogram/src/components/Card/props.ts
@@ -9,20 +9,16 @@
  */
 export default {
   author: {
-    type: Number,
-    required: true
+    type: Number
   },
   avatar: {
-    type: String,
-    required: true
+    type: String
   },
   comment_count: {
-    type: Number,
-    required: true
+    type: Number
   },
   cover: {
-    type: String,
-    required: true
+    type: String
   },
   createDate: {
     type: String
