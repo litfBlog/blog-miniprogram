@@ -1,5 +1,5 @@
 Arguments: 
-  D:\App\nodejs\node.exe D:\App\nodejs\node_modules\yarn\bin\yarn.js add uview-ui
+  D:\App\nodejs\node.exe D:\App\nodejs\node_modules\yarn\bin\yarn.js add dayjs
 
 PATH: 
   C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot\bin;D:\App\Java\jdk-17.0.2\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;D:\APP\微信web开发者工具\dll;C:\Users\32227;C:\Windows\System32\OpenSSH;C:\Program Files\dotnet\;C:\Program Files\Google\Chrome\Application;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\32227\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\32227\AppData\Local\Programs\Python\Python39\;C:\Users\32227\AppData\Local\Microsoft\WindowsApps;D:\App\nvm;D:\App\nodejs;D:\App\Microsoft VS Code\bin;D:\App\Git\bin;D:\App\Git\cmd;C:\Users\32227\.dotnet\tools
