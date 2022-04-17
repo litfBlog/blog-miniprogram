@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-04-17 15:06:16
- * @LastEditTime: 2022-04-17 17:17:24
+ * @LastEditTime: 2022-04-17 17:27:19
  * @LastEditors: litfa
  * @Description: Card
  * @FilePath: /blog-miniprogram/src/components/Card/Card.vue
@@ -9,6 +9,7 @@
 -->
 <script lang="ts" setup>
 import propNames from './props'
+import formatDate from './../../utils/formatDate'
 const props = defineProps(propNames)
 const baseUrl = import.meta.env.VITE_ApiUrl || ''
 </script>
@@ -18,8 +19,9 @@ const baseUrl = import.meta.env.VITE_ApiUrl || ''
     <div class="user">
       <image mode="widthFix" :src="avatar">
       </image>
-      <span class="username">
-        {{ username }}
+      <span class="text">
+        <span class="username"> {{ username }}</span>
+        <span class="date"> {{ formatDate(createDate || 0) }}</span>
       </span>
     </div>
 
@@ -53,9 +55,17 @@ const baseUrl = import.meta.env.VITE_ApiUrl || ''
     border-radius: 50%;
     margin-right: 10rpx;
   }
-  .username {
-    font-size: 30rpx;
-    color: #000a;
+  .text {
+    display: flex;
+    flex-direction: column;
+    .username {
+      color: #000e;
+      font-size: 30rpx;
+    }
+    .date {
+      color: #000a;
+      font-size: 24rpx;
+    }
   }
 }
 .content {
