@@ -46,7 +46,13 @@
 				{
 					"path": "login/login",
 					"style": {
-						"navigationBarTitleText": "login"
+						"navigationBarTitleText": "登录"
+					}
+				},
+				{
+					"path": "p/p",
+					"style": {
+						"navigationBarTitleText": "文章"
 					}
 				}
 			]
