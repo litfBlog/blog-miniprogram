@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-04-17 18:05:55
- * @LastEditTime: 2022-04-23 18:44:27
+ * @LastEditTime: 2022-04-23 19:00:18
  * @LastEditors: litfa
  * @Description: 文章页面
  * @FilePath: /blog-miniprogram/src/subpkg/p/p.vue
@@ -48,6 +48,7 @@ getArticles()
 <template>
   <div class="p">
     <text class="title">{{ data.title }}</text>
+    <Render :text="data.content"></Render>
   </div>
 </template>
 
@@ -56,6 +57,7 @@ getArticles()
   width: 100%;
   .title {
     font-size: 50rpx;
+    font-weight: bold;
   }
 }
 </style>

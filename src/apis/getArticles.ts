@@ -1,7 +1,7 @@
 /*
  * @Author: litfa
  * @Date: 2022-03-22 11:33:11
- * @LastEditTime: 2022-04-17 16:29:47
+ * @LastEditTime: 2022-04-23 18:57:23
  * @LastEditors: litfa
  * @Description: 获取文章
  * @FilePath: /blog-miniprogram/src/apis/getArticles.ts
@@ -17,6 +17,6 @@ export default (id: string | number): any => {
   const isLogin = false
   return request({
     method: 'POST',
-    url: !isLogin ? `/articles/getOne/${id}` : `/articles/getOne/detailed/${id}`
+    url: !isLogin ? `/articles/getOne/getWXML/${id}` : `/articles/getOne/getWXML/${id}`
   })
 }
