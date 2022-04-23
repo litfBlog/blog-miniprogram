@@ -52,7 +52,16 @@
     "mp-weixin": {
         "appid": "wx6b0d1bd73ae522b0",
         "setting": {
-            "urlCheck": false
+            "urlCheck": false,
+            "list": [
+                {
+                    "name": "登录",
+                    "pathName": "subpkg/login/login",
+                    "query": "scene=1650700745418561327333",
+                    "scene": null,
+                    "launchMode": "default"
+                }
+            ]
         },
         "usingComponents": true
     },
