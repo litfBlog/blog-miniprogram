@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-03-02 20:01:36
- * @LastEditTime: 2022-03-04 17:54:21
+ * @LastEditTime: 2022-04-24 19:47:36
  * @LastEditors: litfa
  * @Description: 登录按钮
  * @FilePath: /blog-miniprogram/src/components/LoginButton.vue
@@ -20,7 +20,6 @@ let isScan = ref(false)
 if (scene.toString()?.length > 4) {
   isScan.value = true
 }
-
 // 登录
 const login = async () => {
   interface userInfo {
@@ -48,12 +47,25 @@ const login = async () => {
   // 获取用户信息
   uni.getUserProfile({
     desc: '展示头像、昵称等信息',
-    success(e: any) {
+    async success(e: any) {
       let { nickName, avatarUrl, language } = e.userInfo
       let { encryptedData, signature, iv } = e
       userData = { ...userData, encryptedData, signature, iv, scene }
       userData.userInfo = { nickName, avatarUrl, language }
-      loginApi(userData)
+      const { data: res } = await loginApi(userData)
+      if (res.status == 1) {
+        try {
+          uni.setStorageSync('token', res.token);
+        } catch (e) {
+          uni.showToast({
+            'icon': 'error',
+            title: '登录失败，请稍后再试(token)'
+          })
+        }
+        uni.showToast({
+          title: '登录成功！'
+        })
+      }
     }
   })
 
@@ -61,9 +73,7 @@ const login = async () => {
 </script>
 
 <template>
-  {{ isScan }}
   <div v-if="isScan">登陆到网页端</div>
-  <div v-else>登录小程序</div>
   <button @click="login">一键登录</button>
 </template>
 
