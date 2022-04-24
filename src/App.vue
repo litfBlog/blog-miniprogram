@@ -1,13 +1,14 @@
+<!--
+ * @Author: litfa
+ * @Date: 2022-03-02 18:39:33
+ * @LastEditTime: 2022-04-24 20:08:00
+ * @LastEditors: litfa
+ * @Description: 
+ * @FilePath: /blog-miniprogram/src/App.vue
+ * 
+-->
 <script setup lang="ts">
-import { onLaunch, onShow, onHide } from "@dcloudio/uni-app";
-onLaunch(() => {
-  console.log("App Launch");
-});
-onShow(() => {
-  console.log("App Show");
-});
-onHide(() => {
-  console.log("App Hide");
-});
+import getUserInfo from './utils/getUserInfo'
+getUserInfo()
 </script>
 <style></style>
