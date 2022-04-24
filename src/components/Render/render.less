@@ -1,0 +1,98 @@
+// .render {}
+
+@import url(./Consolas.less);
+
+pre {
+  line-height: 1.4;
+  padding: 1.25rem 1.5rem;
+  margin: 0.85rem 0;
+  background-color: #282c34;
+  border-radius: 6px;
+  overflow: auto;
+}
+
+.render {
+  margin: 15rpx;
+
+  /deep/ .md-h1 {
+    color: red;
+  }
+
+  // 代码块
+  /deep/ .md-pre {
+    background-color: #282c34;
+    border-radius: 6px;
+
+    color: #ccc;
+    font-size: 1em;
+    white-space: pre;
+    text-align: left;
+    word-wrap: normal;
+    word-break: normal;
+    word-spacing: normal;
+    hyphens: none;
+    padding: 20rpx 24rpx;
+    margin: 15rpx 0;
+    overflow-x: scroll;
+
+    .md-code {
+      color: #fff;
+      font-family: 'Consolas';
+    }
+
+    .hljs-comment {
+      color: #999;
+    }
+
+    .hljs-function {
+      color: #67cdcc;
+    }
+
+    .hljs-params {
+      color: #fff;
+    }
+
+    .hljs-keyword {
+      color: #cc99cd;
+    }
+
+    .hljs-tag {
+      color: #fff;
+    }
+
+    .hljs-name {
+      color: #e2777a;
+    }
+
+    .hljs-attr {
+      color: #e2777a;
+    }
+
+    .hljs-string {
+      color: #7ec699;
+    }
+
+    .function_ {
+      color: #f08d49;
+    }
+
+    .hljs-attribute {
+      color: #f8c555;
+    }
+
+    .md-thead {
+      background-color: red;
+    }
+
+  }
+
+  // 表格
+  /deep/ .md-table {
+    border-collapse: collapse;
+  }
+
+  /deep/ .md-td,
+  /deep/ .md-th {
+    border: 1px solid #aaaa;
+  }
+}

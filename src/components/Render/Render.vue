@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-04-23 18:46:51
- * @LastEditTime: 2022-04-23 18:49:02
+ * @LastEditTime: 2022-04-24 16:09:10
  * @LastEditors: litfa
  * @Description: 渲染组件
  * @FilePath: /blog-miniprogram/src/components/Render/Render.vue
@@ -17,8 +17,9 @@ const props = defineProps({
 </script>
 
 <template>
-  <div v-html="text"></div>
+  <div class="render" v-html="text"></div>
 </template>
 
 <style lang="less" scoped>
+@import "./render.less";
 </style>
