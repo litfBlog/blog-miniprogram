@@ -1,17 +1,22 @@
 <!--
  * @Author: litfa
  * @Date: 2022-04-17 18:05:55
- * @LastEditTime: 2022-04-24 17:35:28
+ * @LastEditTime: 2022-04-24 17:52:16
  * @LastEditors: litfa
  * @Description: 文章页面
  * @FilePath: /blog-miniprogram/src/subpkg/p/p.vue
  * 
 -->
 <script lang="ts" setup>
-import { reactive, ref } from 'vue';
+import { reactive } from 'vue';
 import getArticlesApi from '../../apis/getArticles'
 import formatDate from '../../utils/formatDate';
-const { query } = uni.getLaunchOptionsSync()
+const props = defineProps({
+  id: {
+    type: String,
+    required: true
+  }
+})
 
 const data = reactive({
   avatar: '',
@@ -28,7 +33,7 @@ const data = reactive({
 })
 
 const getArticles = async () => {
-  const { data: res } = await getArticlesApi(query.id)
+  const { data: res } = await getArticlesApi(props.id)
   if (res.status == 1) {
     data.avatar = res.data.avatar
     data.content = res.data.content

@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-03-02 18:39:33
- * @LastEditTime: 2022-04-17 17:25:23
+ * @LastEditTime: 2022-04-24 17:41:54
  * @LastEditors: litfa
  * @Description: 首页
  * @FilePath: /blog-miniprogram/src/pages/index/index.vue
@@ -9,16 +9,16 @@
 -->
 <template>
   <view class="content">
-    <Card
-      v-for="i in list"
-      :key="i.id"
-      :username="i.username"
-      :avatar="i.avatar"
-      :title="i.title"
-      :desc="i.desc"
-      :cover="i.cover"
-      :createDate="i.createDate"
-    ></Card>
+    <navigator v-for="i in list" :key="i.id" :url="`/subpkg/p/p?id=${i.id}`">
+      <Card
+        :username="i.username"
+        :avatar="i.avatar"
+        :title="i.title"
+        :desc="i.desc"
+        :cover="i.cover"
+        :createDate="i.createDate"
+      ></Card>
+    </navigator>
   </view>
 </template>
 
