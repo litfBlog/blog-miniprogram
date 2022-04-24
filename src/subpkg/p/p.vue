@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-04-17 18:05:55
- * @LastEditTime: 2022-04-24 16:52:03
+ * @LastEditTime: 2022-04-24 17:35:28
  * @LastEditors: litfa
  * @Description: 文章页面
  * @FilePath: /blog-miniprogram/src/subpkg/p/p.vue
@@ -10,6 +10,7 @@
 <script lang="ts" setup>
 import { reactive, ref } from 'vue';
 import getArticlesApi from '../../apis/getArticles'
+import formatDate from '../../utils/formatDate';
 const { query } = uni.getLaunchOptionsSync()
 
 const data = reactive({
@@ -48,6 +49,7 @@ getArticles()
 <template>
   <div class="p">
     <text class="title">{{ data.title }}</text>
+    <span class="info">{{ formatDate(data.create_date) }} 作者:{{ data.username }}</span>
     <Render :text="data.content"></Render>
   </div>
 </template>
@@ -55,10 +57,17 @@ getArticles()
 <style lang="less" scoped>
 .p {
   width: 100%;
+  display: flex;
+  flex-direction: column;
   .title {
     font-size: 60rpx;
     font-weight: bold;
-    margin: 10rpx 10rpx;
+    margin: 10rpx 10rpx 0 10rpx;
+  }
+  .info {
+    margin-left: 10rpx;
+    color: rgb(66, 67, 67);
+    font-size: 28rpx;
   }
 }
 </style>
