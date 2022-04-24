@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-04-17 15:06:16
- * @LastEditTime: 2022-04-17 17:27:19
+ * @LastEditTime: 2022-04-24 18:00:39
  * @LastEditors: litfa
  * @Description: Card
  * @FilePath: /blog-miniprogram/src/components/Card/Card.vue
@@ -21,7 +21,7 @@ const baseUrl = import.meta.env.VITE_ApiUrl || ''
       </image>
       <span class="text">
         <span class="username"> {{ username }}</span>
-        <span class="date"> {{ formatDate(createDate || 0) }}</span>
+        <span class="date"> {{ formatDate(create_date || 0) }}</span>
       </span>
     </div>
 
@@ -31,7 +31,7 @@ const baseUrl = import.meta.env.VITE_ApiUrl || ''
         <p class="desc">{{ desc }}</p>
       </div>
       <div class="cover">
-        <image :src="`${baseUrl}${cover}`" mode="widthFix"></image>
+        <image :src="cover" mode="widthFix"></image>
       </div>
     </div>
   </view>

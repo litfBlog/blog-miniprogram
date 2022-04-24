@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-03-02 18:39:33
- * @LastEditTime: 2022-04-24 17:41:54
+ * @LastEditTime: 2022-04-24 18:00:13
  * @LastEditors: litfa
  * @Description: 首页
  * @FilePath: /blog-miniprogram/src/pages/index/index.vue
@@ -16,7 +16,7 @@
         :title="i.title"
         :desc="i.desc"
         :cover="i.cover"
-        :createDate="i.createDate"
+        :create_date="i.create_date"
       ></Card>
     </navigator>
   </view>
