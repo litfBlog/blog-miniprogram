@@ -1,21 +1,35 @@
-// .render {}
-
 @import url(./Consolas.less);
 
-pre {
-  line-height: 1.4;
-  padding: 1.25rem 1.5rem;
-  margin: 0.85rem 0;
-  background-color: #282c34;
-  border-radius: 6px;
-  overflow: auto;
-}
-
 .render {
-  margin: 15rpx;
+  margin: 15rpx 20rpx;
+
+
+
+  /deep/.md-h1,
+  /deep/.md-h2,
+  /deep/.md-h3,
+  /deep/.md-h4,
+  /deep/.md-h5,
+  /deep/.md-h6 {
+    margin: 15rpx 0 20rpx 0;
+    font-weight: 500;
+  }
 
   /deep/ .md-h1 {
-    color: red;
+    font-size: 54rpx;
+  }
+
+  /deep/ .md-h2 {
+    font-size: 46rpx;
+  }
+
+  /deep/ .md-h3 {
+    font-size: 40rpx;
+  }
+
+  /deep/ .md-h4 {
+    font-size: 40rpx;
+    font-weight: 600;
   }
 
   // 代码块
@@ -94,5 +108,32 @@ pre {
   /deep/ .md-td,
   /deep/ .md-th {
     border: 1px solid #aaaa;
+  }
+
+  /deep/ .md-p {
+    line-height: 1.7;
+    font-size: 30.5rpx;
+    margin: 20rpx 0;
+    // font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: monospace;
+    // font-family: 'mon';
+    font-family: Monospaced Number, Chinese Quote, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif !important;
+
+  }
+
+  /deep/ .md-a {
+    color: @primary;
+  }
+
+  /deep/ .md-ul,
+  /deep/ .md-ol {
+    margin-left: 0;
+    padding-left: 40rpx;
+  }
+
+
+  /deep/ .md-li {
+    line-height: 1.5;
+    margin-left: 0rpx;
   }
 }

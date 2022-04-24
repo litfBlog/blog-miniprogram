@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-04-17 18:05:55
- * @LastEditTime: 2022-04-23 19:00:18
+ * @LastEditTime: 2022-04-24 16:52:03
  * @LastEditors: litfa
  * @Description: 文章页面
  * @FilePath: /blog-miniprogram/src/subpkg/p/p.vue
@@ -56,8 +56,9 @@ getArticles()
 .p {
   width: 100%;
   .title {
-    font-size: 50rpx;
+    font-size: 60rpx;
     font-weight: bold;
+    margin: 10rpx 10rpx;
   }
 }
 </style>
