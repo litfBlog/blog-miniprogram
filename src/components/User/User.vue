@@ -1,0 +1,96 @@
+<!--
+ * @Author: litfa
+ * @Date: 2022-04-24 20:16:17
+ * @LastEditTime: 2022-04-24 20:20:37
+ * @LastEditors: litfa
+ * @Description: 个人页用户展示
+ * @FilePath: /blog-miniprogram/src/components/User/User.vue
+ * 
+-->
+<script lang="ts" setup>
+const props = defineProps({
+  userName: String,
+  avatar: String
+  // counts...
+})
+</script>
+
+<template>
+  <div class="user">
+    <div class="avatar">
+      <image :src="avatar"></image>
+    </div>
+    <span class="username">{{ userName }}</span>
+  </div>
+  <div class="data">
+    <div class="item">
+      <span class="count">0</span>
+      <span class="text">粉丝</span>
+    </div>
+    <div class="item">
+      <span class="count">0</span>
+      <span class="text">获赞</span>
+    </div>
+    <div class="item">
+      <span class="count">0</span>
+      <span class="text">文章</span>
+    </div>
+  </div>
+</template>
+
+<style lang="less" scoped>
+.user {
+  display: flex;
+  align-items: center;
+  margin-left: 50rpx;
+
+  .avatar {
+    width: 130rpx;
+    height: 130rpx;
+    background-color: rgb(238, 238, 238);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    margin-right: 30rpx;
+    overflow: hidden;
+
+    image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .username {
+    font-size: 50rpx;
+    color: #fff;
+  }
+}
+
+.data {
+  height: 100rpx;
+  // width: calc(100% - 150rpx);
+  // margin-left: 75rpx;
+  width: 100%;
+  padding: 0 130rpx;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25rpx;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    .count {
+      font-size: 40rpx;
+      color: #fff;
+    }
+
+    .text {
+      font-size: 30rpx;
+      color: #fff;
+    }
+  }
+}
+</style>

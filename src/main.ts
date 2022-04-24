@@ -1,7 +1,7 @@
 /*
  * @Author: litfa
  * @Date: 2022-04-23 18:32:16
- * @LastEditTime: 2022-04-24 20:08:07
+ * @LastEditTime: 2022-04-24 20:31:04
  * @LastEditors: litfa
  * @Description: main
  * @FilePath: /blog-miniprogram/src/main.ts
@@ -14,6 +14,6 @@ export function createApp() {
   const app = createSSRApp(App);
   app.use(store)
   return {
-    app,
+    app
   };
 }

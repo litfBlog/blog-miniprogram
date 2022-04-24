@@ -1,45 +1,33 @@
 <!--
  * @Author: litfa
  * @Date: 2022-03-02 19:03:56
- * @LastEditTime: 2022-04-24 19:16:12
+ * @LastEditTime: 2022-04-24 20:26:21
  * @LastEditors: litfa
  * @Description: 
  * @FilePath: /blog-miniprogram/src/pages/my/my.vue
  * 
 -->
 <script lang="ts" setup>
-const toLogin = () => {
-  uni.navigateTo({
-    url: '/subpkg/login/login'
-  })
-}
+import { computed, ref } from 'vue'
+import { useStore } from 'vuex'
+import User from '@/components/User/User.vue'
+
+const store = useStore()
+let user = computed(() => {
+  return store.state.user
+})
 </script>
 
 <template>
-  <div class="header" @click="toLogin">
+  <div class="header">
     <div class="content">
-      <div class="user">
-        <div class="avatar"></div>
-        <span class="username">登录/注册</span>
-      </div>
-      <div class="data">
-        <div class="item">
-          <span class="count">0</span>
-          <span class="text">粉丝</span>
-        </div>
-        <div class="item">
-          <span class="count">0</span>
-          <span class="text">获赞</span>
-        </div>
-        <div class="item">
-          <span class="count">0</span>
-          <span class="text">文章</span>
-        </div>
-      </div>
+      <User v-if="user.isLogin" :userName="user.userName" :avatar="user.avatar"></User>
+      <navigator v-else url="/subpkg/login/login">
+        <User userName="登录/注册"></User>
+      </navigator>
     </div>
     <div class="container"></div>
   </div>
-  <!-- <button @click="toLogin">登录</button> -->
 </template>
 
 <style lang="less" scoped>
