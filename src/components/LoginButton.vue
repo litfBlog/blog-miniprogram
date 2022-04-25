@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-03-02 20:01:36
- * @LastEditTime: 2022-04-24 20:38:33
+ * @LastEditTime: 2022-04-25 15:03:43
  * @LastEditors: litfa
  * @Description: 登录按钮
  * @FilePath: /blog-miniprogram/src/components/LoginButton.vue
@@ -62,19 +62,12 @@ const login = async () => {
             title: '登录失败，请稍后再试(token)'
           })
         }
-        /**
-         * ToDo 4-24 => 4-25
-         * 这里调用会出报错 useStore 返回 undefined 
-         * 改用 pinia
-         */
         getUserInfo()
         uni.showToast({
           title: '登录成功！'
         })
         setTimeout(() => {
-          uni.navigateTo({
-            url: '/pages/my/my'
-          })
+          uni.navigateBack({})
         }, 3000);
       }
     }

@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-03-02 19:03:56
- * @LastEditTime: 2022-04-24 20:26:21
+ * @LastEditTime: 2022-04-25 15:01:00
  * @LastEditors: litfa
  * @Description: 
  * @FilePath: /blog-miniprogram/src/pages/my/my.vue
@@ -9,12 +9,13 @@
 -->
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
-import { useStore } from 'vuex'
+import { useCounterStore } from '@/store/index'
+
 import User from '@/components/User/User.vue'
 
-const store = useStore()
+const store = useCounterStore()
 let user = computed(() => {
-  return store.state.user
+  return store
 })
 </script>
 
