@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-03-02 19:03:56
- * @LastEditTime: 2022-04-25 15:01:00
+ * @LastEditTime: 2022-04-27 20:32:24
  * @LastEditors: litfa
  * @Description: 
  * @FilePath: /blog-miniprogram/src/pages/my/my.vue
@@ -22,9 +22,9 @@ let user = computed(() => {
 <template>
   <div class="header">
     <div class="content">
-      <User v-if="user.isLogin" :userName="user.userName" :avatar="user.avatar"></User>
+      <User v-if="user.isLogin" :userName="user.userName" :avatar="user.avatar" :isLogin="true"></User>
       <navigator v-else url="/subpkg/login/login">
-        <User userName="登录/注册"></User>
+        <User userName="登录/注册" :isLogin="false"></User>
       </navigator>
     </div>
     <div class="container"></div>

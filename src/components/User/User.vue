@@ -1,26 +1,36 @@
 <!--
  * @Author: litfa
  * @Date: 2022-04-24 20:16:17
- * @LastEditTime: 2022-04-24 20:20:37
+ * @LastEditTime: 2022-04-27 20:33:26
  * @LastEditors: litfa
  * @Description: 个人页用户展示
  * @FilePath: /blog-miniprogram/src/components/User/User.vue
  * 
 -->
 <script lang="ts" setup>
+import getUserInfo from '@/apis/getUserInfo'
 const props = defineProps({
+  isLogin: Boolean,
   userName: String,
   avatar: String
   // counts...
 })
+
+const logout = () => {
+  uni.removeStorageSync('token')
+  getUserInfo()
+}
 </script>
 
 <template>
   <div class="user">
-    <div class="avatar">
-      <image :src="avatar"></image>
+    <div class="left">
+      <div class="avatar">
+        <image :src="avatar"></image>
+      </div>
+      <span class="username">{{ userName }}</span>
     </div>
-    <span class="username">{{ userName }}</span>
+    <div v-if="isLogin" @click="logout">退出登录</div>
   </div>
   <div class="data">
     <div class="item">
@@ -41,8 +51,17 @@ const props = defineProps({
 <style lang="less" scoped>
 .user {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   margin-left: 50rpx;
+  margin-right: 30rpx;
+  color: #fff;
+
+  .left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   .avatar {
     width: 130rpx;
