@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-03-02 19:03:56
- * @LastEditTime: 2022-05-03 16:33:12
+ * @LastEditTime: 2022-05-03 16:45:46
  * @LastEditors: litfa
  * @Description: 
  * @FilePath: /blog-miniprogram/src/pages/my/my.vue
@@ -12,7 +12,7 @@ import { computed, ref } from 'vue'
 import { useCounterStore } from '@/store/index'
 
 import User from '@/components/User/User.vue'
-import getUserInfo from '@/apis/getUserInfo'
+import getUserInfo from '@/utils/getUserInfo'
 import scanCode from '@/utils/scanCode'
 
 const store = useCounterStore()
@@ -21,8 +21,22 @@ let user = computed(() => {
 })
 
 const logout = () => {
-  uni.removeStorageSync('token')
-  getUserInfo()
+  uni.showModal({
+    title: '退出登录',
+    content: '确定要退出吗',
+    success: async function (res) {
+      if (res.confirm) {
+        uni.removeStorageSync('token')
+        await getUserInfo()
+        uni.showToast({
+          icon: 'success',
+          title: '操作成功'
+        })
+        user.value.isLogin = false
+      }
+      //  else if (res.cancel) {}
+    }
+  });
 }
 </script>
 
@@ -38,7 +52,7 @@ const logout = () => {
       <Li>不知道放啥</Li>
       <Li>不放不好看</Li>
       <Li @click="scanCode">扫一扫</Li>
-      <Li @click="logout">退出登录</Li>
+      <Li @click="logout" v-if="user.isLogin">退出登录</Li>
     </div>
   </div>
 </template>
