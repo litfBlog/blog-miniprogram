@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-03-02 20:01:36
- * @LastEditTime: 2022-04-25 15:03:43
+ * @LastEditTime: 2022-05-03 15:30:17
  * @LastEditors: litfa
  * @Description: 登录按钮
  * @FilePath: /blog-miniprogram/src/components/LoginButton.vue
@@ -67,8 +67,10 @@ const login = async () => {
           title: '登录成功！'
         })
         setTimeout(() => {
-          uni.navigateBack({})
-        }, 3000);
+          uni.reLaunch({
+            url: '/pages/my/my'
+          })
+        }, 1000);
       }
     }
   })
