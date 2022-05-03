@@ -1,36 +1,20 @@
 <!--
  * @Author: litfa
  * @Date: 2022-04-24 20:16:17
- * @LastEditTime: 2022-05-03 15:49:02
+ * @LastEditTime: 2022-05-03 16:31:38
  * @LastEditors: litfa
  * @Description: 个人页用户展示
  * @FilePath: /blog-miniprogram/src/components/User/User.vue
  * 
 -->
 <script lang="ts" setup>
-import getUserInfo from '@/apis/getUserInfo'
+import scanCode from '@/utils/scanCode';
 const props = defineProps({
   isLogin: Boolean,
   userName: String,
   avatar: String
   // counts...
 })
-
-const logout = () => {
-  uni.removeStorageSync('token')
-  getUserInfo()
-}
-
-const scanCode = () => {
-  uni.scanCode({
-    success(e) {
-      console.log(e);
-      if (e.path) uni.redirectTo({
-        url: '/' + e.path
-      })
-    }
-  })
-}
 </script>
 
 <template>
