@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-04-24 20:16:17
- * @LastEditTime: 2022-04-27 20:33:26
+ * @LastEditTime: 2022-05-03 15:49:02
  * @LastEditors: litfa
  * @Description: 个人页用户展示
  * @FilePath: /blog-miniprogram/src/components/User/User.vue
@@ -20,6 +20,17 @@ const logout = () => {
   uni.removeStorageSync('token')
   getUserInfo()
 }
+
+const scanCode = () => {
+  uni.scanCode({
+    success(e) {
+      console.log(e);
+      if (e.path) uni.redirectTo({
+        url: '/' + e.path
+      })
+    }
+  })
+}
 </script>
 
 <template>
@@ -30,7 +41,9 @@ const logout = () => {
       </div>
       <span class="username">{{ userName }}</span>
     </div>
-    <div v-if="isLogin" @click="logout">退出登录</div>
+    <div class="scan" @click="scanCode">
+      <image class="icon-scan" src="@/static/scan-code_1.png" />
+    </div>
   </div>
   <div class="data">
     <div class="item">
@@ -61,6 +74,12 @@ const logout = () => {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .scan {
+    .icon-scan {
+      width: 70rpx;
+      height: 70rpx;
+    }
   }
 
   .avatar {

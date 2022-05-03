@@ -1,7 +1,7 @@
 <!--
  * @Author: litfa
  * @Date: 2022-03-02 20:01:36
- * @LastEditTime: 2022-05-03 15:30:17
+ * @LastEditTime: 2022-05-03 16:11:41
  * @LastEditors: litfa
  * @Description: 登录按钮
  * @FilePath: /blog-miniprogram/src/components/LoginButton.vue
@@ -10,10 +10,23 @@
 <script lang="ts" setup>
 import loginApi from './../apis/login'
 import { ref } from 'vue'
+import { onLoad } from '@dcloudio/uni-app'
 import getUserInfo from '../utils/getUserInfo'
+
 // 获取code
-let { query, scene } = uni.getLaunchOptionsSync()
+let { query, scene: launchScene } = uni.getLaunchOptionsSync()
+
+let scene = launchScene.toString()
+
 if (query.scene) scene = query.scene
+
+// 小程序内扫码跳转
+onLoad((data) => {
+  if (data.scene) scene = data.scene
+  if (scene.toString()?.length > 4) {
+    isScan.value = true
+  }
+})
 
 // 展示是否为网页端登录
 let isScan = ref(false)
