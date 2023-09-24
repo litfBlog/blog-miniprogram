@@ -1,63 +1,70 @@
 {
-	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-		{
-			"path": "pages/index/index",
-			"style": {
-				"navigationBarTitleText": "首页"
-			}
-		},
-		{
-			"path": "pages/my/my",
-			"style": {
-				"navigationBarTitleText": "我的",
-				"navigationBarBackgroundColor": "#42b983",
-				"navigationBarTextStyle": "white"
-			}
-		}
-	],
-	"tabBar": {
-		"color": "#7A7E83",
-		"selectedColor": "#42b983",
-		"borderStyle": "black",
-		"backgroundColor": "#ffffff",
-		"list": [
-			{
-				"pagePath": "pages/index/index",
-				"iconPath": "static/tabBar/home.png",
-				"selectedIconPath": "static/tabBar/home_active.png",
-				"text": "首页"
-			},
-			{
-				"pagePath": "pages/my/my",
-				"iconPath": "static/tabBar/user.png",
-				"selectedIconPath": "static/tabBar/user_active.png",
-				"text": "我"
-			}
-		]
-	},
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
-	},
-	"subPackages": [
-		{
-			"root": "subpkg",
-			"pages": [
-				{
-					"path": "login/login",
-					"style": {
-						"navigationBarTitleText": "登录"
-					}
-				},
-				{
-					"path": "p/p",
-					"style": {
-						"navigationBarTitleText": "文章"
-					}
-				}
-			]
-		}
-	]
+  "pages": [
+    //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "pages/my/my",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationBarBackgroundColor": "#42b983",
+        "navigationBarTextStyle": "white"
+      }
+    }
+  ],
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#42b983",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabBar/home.png",
+        "selectedIconPath": "static/tabBar/home_active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "static/tabBar/user.png",
+        "selectedIconPath": "static/tabBar/user_active.png",
+        "text": "我"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "subPackages": [
+    {
+      "root": "subpkg",
+      "pages": [
+        {
+          "path": "login/login",
+          "style": {
+            "navigationBarTitleText": "登录"
+          }
+        },
+        {
+          "path": "p/p",
+          "style": {
+            "navigationBarTitleText": "文章"
+          }
+        },
+        {
+          "path": "edit_user_info/edit_user_info",
+          "style": {
+            "navigationBarTitleText": "编辑资料"
+          }
+        }
+      ]
+    }
+  ]
 }

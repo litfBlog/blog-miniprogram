@@ -1,19 +1,25 @@
-<!--
- * @Author: litfa
- * @Date: 2022-03-02 19:56:20
- * @LastEditTime: 2022-03-02 20:13:48
- * @LastEditors: litfa
- * @Description: 登录页面 分包
- * @FilePath: /blog-miniprogram/src/subpkg/login/login.vue
- * 
--->
 <script lang="ts" setup>
-import LoginButton from '../../components/LoginButton.vue'
+import LoginButton from "../../components/LoginButton.vue";
 </script>
 
 <template>
-  <login-button></login-button>
+  <div class="box">
+    <image class="logo" src="https://www.ltfei.cn/img/logo.d05ba22d.webp" />
+    <h1 class="text">登录到 Ltfei Blog</h1>
+    <login-button></login-button>
+  </div>
 </template>
 
-<style  scoped>
+<style scoped lang="less">
+.box {
+  margin: 25px 20px;
+.text {
+  margin: 10px 0 30px 0;
+}
+}
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
 </style>
