@@ -1,8 +1,7 @@
-
 <script lang="ts" setup>
-import { reactive } from 'vue';
+import { reactive } from 'vue'
 import getArticlesApi from '../../apis/getArticles'
-import formatDate from '../../utils/formatDate';
+import formatDate from '../../utils/formatDate'
 const props = defineProps({
   id: {
     type: String,

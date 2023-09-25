@@ -1,51 +1,51 @@
 <script setup lang="ts">
-import { ref } from "vue";
-import { useCounterStore } from "@/store/index";
-import editUserInfoApi from "@/apis/editUserInfo";
-import getUserInfo from "@/utils/getUserInfo";
+import { ref } from 'vue'
+import { useCounterStore } from '@/store/index'
+import editUserInfoApi from '@/apis/editUserInfo'
+import getUserInfo from '@/utils/getUserInfo'
 
-const user = useCounterStore();
+const user = useCounterStore()
 
-const username = ref(user.userName);
-const avatar = ref(user.avatar);
-console.log(user);
+const username = ref(user.userName)
+const avatar = ref(user.avatar)
+console.log(user)
 
 const uploadAvatar = async (e: any) => {
-  console.log("event");
+  console.log('event')
   uni.uploadFile({
-    url: "https://api.ltfei.cn/blog/articles/upload?id=avatar&isCover=false",
+    url: 'https://api.ltfei.cn/blog/articles/upload?id=avatar&isCover=false',
     filePath: e.detail.avatarUrl,
-    name: "file",
+    name: 'file',
     header: {
-      Authorization: uni.getStorageSync("token"),
+      Authorization: uni.getStorageSync('token')
     },
     success(uploadFileRes) {
-      const data = JSON.parse(uploadFileRes.data);
-      avatar.value = "//" + data.Location;
-    },
-  });
-};
+      const data = JSON.parse(uploadFileRes.data)
+      avatar.value = '//' + data.Location
+    }
+  })
+}
 
 const submit = async () => {
-  const { data: res } = await editUserInfoApi(username.value, avatar.value);
+  const { data: res } = await editUserInfoApi(username.value, avatar.value)
   if (res.status == 1) {
     uni.showToast({
-      title: "修改成功",
-    });
+      title: '修改成功'
+    })
     await getUserInfo()
     setTimeout(() => {
       uni.reLaunch({
-        url: "/pages/index/index",
-      });
-    }, 1000);
+        url: '/pages/index/index'
+      })
+    }, 1000)
   } else {
     uni.showModal({
-      title: "修改失败",
+      title: '修改失败',
       content: res.msg,
-      showCancel: false,
-    });
+      showCancel: false
+    })
   }
-};
+}
 </script>
 
 <template>
@@ -53,11 +53,7 @@ const submit = async () => {
     <h3 class="sub_title">用户名</h3>
     <input type="nickname" v-model="username" />
     <h3 class="sub_title">头像</h3>
-    <button
-      class="upload"
-      open-type="chooseAvatar"
-      @chooseavatar="uploadAvatar"
-    >
+    <button class="upload" open-type="chooseAvatar" @chooseavatar="uploadAvatar">
       <image
         v-if="!avatar"
         class="upload-icon"

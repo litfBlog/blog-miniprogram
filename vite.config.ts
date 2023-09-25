@@ -1,5 +1,5 @@
-import { defineConfig } from "vite";
-import uni from "@dcloudio/vite-plugin-uni";
+import { defineConfig } from 'vite'
+import uni from '@dcloudio/vite-plugin-uni'
 
 // let path = require('path')
 import path from 'path'
@@ -11,9 +11,9 @@ export default defineConfig({
     preprocessorOptions: {
       less: {
         globalVars: {
-          "hack": `true; @import "${stylePath}"`
+          hack: `true; @import "${stylePath}"`
         }
       }
     }
-  },
-});
+  }
+})

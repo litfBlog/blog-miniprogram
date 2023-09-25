@@ -1,4 +1,3 @@
-
 <script lang="ts" setup>
 import propNames from './props'
 import formatDate from './../../utils/formatDate'
@@ -9,8 +8,7 @@ const baseUrl = import.meta.env.VITE_ApiUrl || ''
 <template>
   <view class="Card">
     <div class="user">
-      <image mode="widthFix" :src="avatar">
-      </image>
+      <image mode="widthFix" :src="avatar"> </image>
       <span class="text">
         <span class="username"> {{ username }}</span>
         <span class="date"> {{ formatDate(create_date || 0) }}</span>

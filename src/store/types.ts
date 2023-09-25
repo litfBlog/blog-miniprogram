@@ -1,6 +1,6 @@
 export interface User {
-  isLogin?: boolean,
-  userName?: string,
-  avatar?: string,
+  isLogin?: boolean
+  userName?: string
+  avatar?: string
   id?: number
 }

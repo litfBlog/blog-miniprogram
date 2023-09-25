@@ -1,4 +1,3 @@
-
 <template>
   <view class="content">
     <navigator v-for="i in list" :key="i.id" :url="`/subpkg/p/p?id=${i.id}`">
@@ -23,7 +22,6 @@ const list: any = ref([])
 const getList = async () => {
   const { data: res } = await getListApi()
   list.value = res.list
-
 }
 getList()
 </script>

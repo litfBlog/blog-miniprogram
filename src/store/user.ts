@@ -13,8 +13,6 @@ export default {
       state.avatar = data?.avatar || state.avatar
       state.id = data?.id || state.id
     }
-
   },
-  actions: {
-  }
+  actions: {}
 }

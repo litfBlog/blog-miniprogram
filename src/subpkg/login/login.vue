@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import LoginButton from "../../components/LoginButton.vue";
+import LoginButton from '../../components/LoginButton.vue'
 </script>
 
 <template>
@@ -13,9 +13,9 @@ import LoginButton from "../../components/LoginButton.vue";
 <style scoped lang="less">
 .box {
   margin: 25px 20px;
-.text {
-  margin: 10px 0 30px 0;
-}
+  .text {
+    margin: 10px 0 30px 0;
+  }
 }
 .logo {
   width: 100px;

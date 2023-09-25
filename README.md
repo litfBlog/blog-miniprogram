@@ -1,5 +1,6 @@
 # blog-miniprogram
-博客-小程序  
+
+博客-小程序
 
 本项目的其他仓库:
 [后端](https://github.com/litfBlog/blog-service)

@@ -1,74 +1,73 @@
-
 <script lang="ts" setup>
-import loginApi from "./../apis/login";
-import { ref } from "vue";
-import { onLoad } from "@dcloudio/uni-app";
-import getUserInfo from "../utils/getUserInfo";
+import loginApi from './../apis/login'
+import { ref } from 'vue'
+import { onLoad } from '@dcloudio/uni-app'
+import getUserInfo from '../utils/getUserInfo'
 
 // 获取code
-let { query, scene: launchScene } = uni.getLaunchOptionsSync();
+let { query, scene: launchScene } = uni.getLaunchOptionsSync()
 
-let scene = launchScene.toString();
+let scene = launchScene.toString()
 
-if (query.scene) scene = query.scene;
+if (query.scene) scene = query.scene
 
 // 小程序内扫码跳转
 onLoad((data) => {
-  if (data.scene) scene = data.scene;
+  if (data.scene) scene = data.scene
   if (scene.toString()?.length > 4) {
-    isScan.value = true;
+    isScan.value = true
   }
-});
+})
 
 // 展示是否为网页端登录
-let isScan = ref(false);
+let isScan = ref(false)
 if (scene.toString()?.length > 4) {
-  isScan.value = true;
+  isScan.value = true
 }
 // 登录
 const login = async () => {
-  console.log("开始登录");
+  console.log('开始登录')
 
-  uni.showLoading({});
+  uni.showLoading({})
   // 登录
   uni.login({
     async success(e) {
-      console.log(e);
+      console.log(e)
       const { data: res } = await loginApi({
         code: e.code,
-        scene,
-      });
+        scene
+      })
 
       if (res.status == 1) {
         try {
-          uni.setStorageSync("token", res.token);
+          uni.setStorageSync('token', res.token)
         } catch (e) {
           uni.showToast({
-            icon: "error",
-            title: "登录失败，请稍后再试(token)",
-          });
+            icon: 'error',
+            title: '登录失败，请稍后再试(token)'
+          })
         }
       }
-      await getUserInfo();
+      await getUserInfo()
       setTimeout(() => {
-        if (res.type == "register") {
+        if (res.type == 'register') {
           return uni.reLaunch({
-            url: "/subpkg/edit_user_info/edit_user_info",
-          });
+            url: '/subpkg/edit_user_info/edit_user_info'
+          })
         }
         uni.reLaunch({
-          url: "/pages/my/my",
-        });
-      }, 1000);
+          url: '/pages/my/my'
+        })
+      }, 1000)
     },
     fail(e) {
-      console.log(e);
+      console.log(e)
       uni.showModal({
-        title: "登录失败",
-      });
-    },
-  });
-};
+        title: '登录失败'
+      })
+    }
+  })
+}
 </script>
 
 <template>

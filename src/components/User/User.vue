@@ -1,6 +1,5 @@
-
 <script lang="ts" setup>
-import scanCode from '@/utils/scanCode';
+import scanCode from '@/utils/scanCode'
 const props = defineProps({
   isLogin: Boolean,
   userName: String,

@@ -1,4 +1,3 @@
-
 <script lang="ts" setup>
 const props = defineProps({
   text: {
@@ -13,5 +12,5 @@ const props = defineProps({
 </template>
 
 <style lang="less" scoped>
-@import "./render.less";
+@import './render.less';
 </style>
