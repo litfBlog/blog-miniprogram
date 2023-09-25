@@ -35,29 +35,13 @@ if (scene.toString()?.length > 4) {
 }
 // 登录
 const login = async () => {
-  interface userInfo {
-    avatarUrl?: string;
-    language?: string;
-    nickName?: string;
-  }
-  interface loginData {
-    code?: string;
-    signature?: string;
-    encryptedData?: string;
-    iv?: string;
-    scene?: string | number;
-    userInfo?: userInfo;
-  }
+  console.log("开始登录");
 
   uni.showLoading({});
-
-  let userData: loginData = {};
   // 登录
   uni.login({
     async success(e) {
       console.log(e);
-      userData.code = e.code;
-
       const { data: res } = await loginApi({
         code: e.code,
         scene,
@@ -85,50 +69,26 @@ const login = async () => {
         });
       }, 1000);
     },
+    fail(e) {
+      console.log(e);
+      uni.showModal({
+        title: "登录失败",
+      });
+    },
   });
-  // 获取用户信息
-  // uni.getUserProfile({
-  //   desc: '展示头像、昵称等信息',
-  //   async success(e: any) {
-  //     let { nickName, avatarUrl, language } = e.userInfo
-  //     let { encryptedData, signature, iv } = e
-  //     userData = { ...userData, encryptedData, signature, iv, scene }
-  //     userData.userInfo = { nickName, avatarUrl, language }
-  //     const { data: res } = await loginApi(userData)
-  //     if (res.status == 1) {
-  //       try {
-  //         uni.setStorageSync('token', res.token);
-  //       } catch (e) {
-  //         uni.showToast({
-  //           'icon': 'error',
-  //           title: '登录失败，请稍后再试(token)'
-  //         })
-  //       }
-  //       getUserInfo()
-  //       uni.showToast({
-  //         title: '登录成功！'
-  //       })
-  //       setTimeout(() => {
-  //         uni.reLaunch({
-  //           url: '/pages/my/my'
-  //         })
-  //       }, 1000);
-  //     }
-  //   }
-  // })
 };
 </script>
 
 <template>
   <div v-if="isScan">登陆到网页端</div>
-  <button @click="login">一键登录</button>
+  <button class="login_button" @click="login">一键登录</button>
 </template>
 
 <style lang="less" scoped>
-button {
+.login_button {
   background-color: @primary;
-  // margin: 100rpx 15rpx;
   color: #fff;
   border: none;
+  margin-top: 20px;
 }
 </style>

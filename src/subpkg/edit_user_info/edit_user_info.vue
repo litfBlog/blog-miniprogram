@@ -113,6 +113,7 @@ const submit = async () => {
     font-size: 16px;
     line-height: 35px;
     color: #fff;
+    margin-top: 20px;
   }
 }
 </style>

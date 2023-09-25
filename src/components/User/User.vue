@@ -25,7 +25,7 @@ const props = defineProps({
       </div>
       <span class="username">{{ userName }}</span>
     </div>
-    <div class="scan" @click="scanCode">
+    <div class="scan" @click.stop="scanCode">
       <image class="icon-scan" src="@/static/scan-code_1.png" />
     </div>
   </div>
