@@ -1,12 +1,4 @@
-<!--
- * @Author: litfa
- * @Date: 2022-04-17 15:06:16
- * @LastEditTime: 2022-04-24 18:00:39
- * @LastEditors: litfa
- * @Description: Card
- * @FilePath: /blog-miniprogram/src/components/Card/Card.vue
- * 
--->
+
 <script lang="ts" setup>
 import propNames from './props'
 import formatDate from './../../utils/formatDate'

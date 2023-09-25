@@ -1,12 +1,4 @@
-<!--
- * @Author: litfa
- * @Date: 2022-03-02 19:03:56
- * @LastEditTime: 2022-05-03 16:45:46
- * @LastEditors: litfa
- * @Description: 
- * @FilePath: /blog-miniprogram/src/pages/my/my.vue
- * 
--->
+
 <script lang="ts" setup>
 import { computed, ref } from "vue";
 import { useCounterStore } from "@/store/index";

@@ -1,12 +1,3 @@
-/*
- * @Author: litfa
- * @Date: 2022-03-02 18:39:33
- * @LastEditTime: 2022-03-02 20:32:08
- * @LastEditors: litfa
- * @Description: config
- * @FilePath: /blog-miniprogram/vite.config.ts
- * 
- */
 import { defineConfig } from "vite";
 import uni from "@dcloudio/vite-plugin-uni";
 

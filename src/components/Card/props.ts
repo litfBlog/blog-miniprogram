@@ -1,12 +1,3 @@
-/*
- * @Author: litfa
- * @Date: 2022-04-17 16:35:52
- * @LastEditTime: 2022-04-24 17:59:30
- * @LastEditors: litfa
- * @Description: props
- * @FilePath: /blog-miniprogram/src/components/Card/props.ts
- * 
- */
 export default {
   author: {
     type: Number

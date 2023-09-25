@@ -1,12 +1,4 @@
-<!--
- * @Author: litfa
- * @Date: 2022-03-02 18:39:33
- * @LastEditTime: 2022-04-24 18:00:13
- * @LastEditors: litfa
- * @Description: 首页
- * @FilePath: /blog-miniprogram/src/pages/index/index.vue
- * 
--->
+
 <template>
   <view class="content">
     <navigator v-for="i in list" :key="i.id" :url="`/subpkg/p/p?id=${i.id}`">

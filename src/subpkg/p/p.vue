@@ -1,12 +1,4 @@
-<!--
- * @Author: litfa
- * @Date: 2022-04-17 18:05:55
- * @LastEditTime: 2022-04-24 17:52:16
- * @LastEditors: litfa
- * @Description: 文章页面
- * @FilePath: /blog-miniprogram/src/subpkg/p/p.vue
- * 
--->
+
 <script lang="ts" setup>
 import { reactive } from 'vue';
 import getArticlesApi from '../../apis/getArticles'

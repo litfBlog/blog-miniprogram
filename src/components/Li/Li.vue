@@ -1,12 +1,4 @@
-<!--
- * @Author: litfa
- * @Date: 2022-05-03 16:14:27
- * @LastEditTime: 2022-05-03 16:34:03
- * @LastEditors: litfa
- * @Description: 列表
- * @FilePath: /blog-miniprogram/src/components/Li/Li.vue
- * 
--->
+
 <script lang="ts" setup>
 const emits = defineEmits(['click'])
 </script>

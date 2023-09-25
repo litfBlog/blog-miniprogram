@@ -1,12 +1,4 @@
-<!--
- * @Author: litfa
- * @Date: 2022-04-24 20:16:17
- * @LastEditTime: 2022-05-03 16:31:38
- * @LastEditors: litfa
- * @Description: 个人页用户展示
- * @FilePath: /blog-miniprogram/src/components/User/User.vue
- * 
--->
+
 <script lang="ts" setup>
 import scanCode from '@/utils/scanCode';
 const props = defineProps({

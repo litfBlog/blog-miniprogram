@@ -1,12 +1,3 @@
-/*
- * @Author: litfa
- * @Date: 2022-03-03 10:09:26
- * @LastEditTime: 2022-04-24 19:57:18
- * @LastEditors: litfa
- * @Description: http
- * @FilePath: /blog-miniprogram/src/utils/request.ts
- * 
- */
 const base_url = import.meta.env.VITE_ApiUrl as string + import.meta.env.VITE_baseUrl as string
 
 interface config {

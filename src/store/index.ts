@@ -1,12 +1,3 @@
-/*
- * @Author: litfa
- * @Date: 2022-02-16 02:07:22
- * @LastEditTime: 2022-04-25 14:56:30
- * @LastEditors: litfa
- * @Description: pinia
- * @FilePath: /blog-miniprogram/src/store/index.ts
- * 
- */
 // import { createStore } from 'vuex'
 
 // import user from './user'

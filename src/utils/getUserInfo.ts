@@ -1,12 +1,3 @@
-/*
- * @Author: litfa
- * @Date: 2022-04-24 19:58:48
- * @LastEditTime: 2022-05-03 16:43:29
- * @LastEditors: litfa
- * @Description: 获取用户信息
- * @FilePath: /blog-miniprogram/src/utils/getUserInfo.ts
- * 
- */
 import getUserInfoApi from '../apis/getUserInfo'
 import { useCounterStore } from '../store/index'
 export default async (): Promise<any> => {

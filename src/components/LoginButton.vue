@@ -1,12 +1,4 @@
-<!--
- * @Author: litfa
- * @Date: 2022-03-02 20:01:36
- * @LastEditTime: 2022-05-03 16:11:41
- * @LastEditors: litfa
- * @Description: 登录按钮
- * @FilePath: /blog-miniprogram/src/components/LoginButton.vue
- * 
--->
+
 <script lang="ts" setup>
 import loginApi from "./../apis/login";
 import { ref } from "vue";
